@@ -34,7 +34,8 @@ class Square extends Rectangle {
 }
 
 // Example usage
-const rectangle = new Rectangle(5, 10);
+try {
+    const rectangle = new Rectangle(5, 10);
     console.log(rectangle.width); // Output: 5
     console.log(rectangle.height); // Output: 10
     console.log(rectangle.getArea()); // Output: 50
@@ -46,3 +47,4 @@ const rectangle = new Rectangle(5, 10);
     console.log(square.getPerimeter()); // Output: 28
 } catch (error) {
     console.error(error.message);
+}
