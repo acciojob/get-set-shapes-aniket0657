@@ -1,50 +1,29 @@
-class Rectangle {
+// get set shapes
+
+
+//complete this code
+ class Rectangle {
     constructor(width, height) {
-        if (width <= 0 || height <= 0) {
-            throw new Error("Width and height must be positive integers.");
-        }
-        this._width = width;
-        this._height = height;
-    }
-
-    get width() {
-        return this._width;
-    }
-
-    get height() {
-        return this._height;
+      this.width = width;
+      this.height = height;
     }
 
     getArea() {
-        return this._width * this._height;
+      return this.width * this.height;
     }
-}
+  }
 
-class Square extends Rectangle {
+  // Square class (inherits from Rectangle)
+  class Square extends Rectangle {
     constructor(side) {
-        if (side <= 0) {
-            throw new Error("Side must be a positive integer.");
-        }
-        super(side, side);
+      super(side, side); // Pass the same value for width and height
     }
 
     getPerimeter() {
-        return 4 * this._width;
+      return 4 * this.width; // Perimeter of a square (4 * side)
     }
-}
+  }
 
-// Example usage
-try {
-    const rectangle = new Rectangle(5, 10);
-    console.log(rectangle.width); // Output: 5
-    console.log(rectangle.height); // Output: 10
-    console.log(rectangle.getArea()); // Output: 50
-
-    const square = new Square(7);
-    console.log(square.width); // Output: 7
-    console.log(square.height); // Output: 7
-    console.log(square.getArea()); // Output: 49
-    console.log(square.getPerimeter()); // Output: 28
-} catch (error) {
-    console.error(error.message);
-}
+// Do not change the code below this line
+window.Rectangle = Rectangle;
+window.Square = Square;
